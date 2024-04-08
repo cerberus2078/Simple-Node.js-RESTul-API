@@ -102,7 +102,6 @@ app.delete('/products/:id', (req,res) => {
     const product = products.find(product => product.id === productId);
 
     if(product){
-        // cars = cars.filter(car => car.id !== idToRemove);
         products = products.filter(product => product.id !== productId);
         res.status(200).json({
             id: productId
@@ -113,10 +112,12 @@ app.delete('/products/:id', (req,res) => {
             msg: 'Could not find the product'
         });
     }
+
+    res.json(products);
 });
 
 // Create 
-app.post('/api/products', (req,res) => {
+app.post('/products', (req,res) => {
     //console.log(req.body);
     //res.send('ok');
     const lastId = products[products.length-1].id;
