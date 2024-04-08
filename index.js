@@ -95,7 +95,7 @@ app.get('/products/:id', (req,res) => {
 });
 
 // DELETE
-app.delete('/api/products/:id', (req,res) => {
+app.delete('/products/:id', (req,res) => {
     const productId = Number(req.params.id);
     
     // check if we have a product with the id
